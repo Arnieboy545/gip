@@ -24,9 +24,14 @@ class MyController(Controller):
 
     def on_L3_up(self, value):
         speed = int((value/400)*-1)
-        print("backward:" + str(speed))
+        print("forward:" + str(speed))
         self.bw.speed = speed
         self.bw.backward()
+    def on_L3_down(self, value):
+            speed = int((value/400)*-1)
+            print("backward:" + str(speed))
+            self.bw.speed = speed
+            self.bw.forward()
 
 controller = MyController(interface="/dev/input/js0", connecting_using_ds4drv=False)
 # you can start listening before controller is paired, as long as you pair it within the timeout window
