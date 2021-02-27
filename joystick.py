@@ -6,6 +6,7 @@ import picar
 
 
 class MyController(Controller):
+    picar.setup()
     bw = back_wheels.Back_Wheels()
     bw.speed = 0
     motor_speed = 60
