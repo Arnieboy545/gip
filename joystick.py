@@ -24,7 +24,7 @@ class MyController(Controller):
 
     def on_L3_up(self, value):
          print("Forward!")
-         self.bw.speed = self.motor_speed
+         self.bw.speed = value
          self.bw.forward()
 
 controller = MyController(interface="/dev/input/js0", connecting_using_ds4drv=False)
