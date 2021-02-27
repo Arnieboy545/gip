@@ -20,6 +20,7 @@ class MyController(Controller):
 
     def on_x_release(self):
        print("Goodbye world")
+       self.bw.speed = 0
 
     def on_L3_up(self, value):
          print("Forward!")
