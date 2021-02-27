@@ -20,7 +20,7 @@ class MyController(Controller):
     def on_x_release(self):
        print("Goodbye world")
 
-    def on_L3_up(self):
+    def on_R3_up(self):
         print("L3_Up")
 
 controller = MyController(interface="/dev/input/js0", connecting_using_ds4drv=False)
