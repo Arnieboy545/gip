@@ -24,7 +24,7 @@ class MyController(Controller):
 
     def on_L3_up(self, value):
          print("backward:" + str(value))
-         self.bw.speed = (value/130)*-1
+         self.bw.speed = int((value/130)*-1)
          self.bw.backward()
 
 controller = MyController(interface="/dev/input/js0", connecting_using_ds4drv=False)
