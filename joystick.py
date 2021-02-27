@@ -28,7 +28,7 @@ class MyController(Controller):
         self.bw.speed = speed
         self.bw.backward()
     def on_L3_down(self, value):
-            speed = int((value/400)*-1)
+            speed = int(value/400)
             print("backward:" + str(speed))
             self.bw.speed = speed
             self.bw.forward()
