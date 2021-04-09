@@ -12,9 +12,9 @@ fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
 picar.setup()
 
-fw.offset = 10
-pan_servo.offset = 10
+fw.offset = 20
+pan_servo.offset = 20
 
-fw.turn(90)
-pan_servo.write(90)
+fw.turn(100)
+pan_servo.write(100)
 
