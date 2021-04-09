@@ -15,6 +15,6 @@ picar.setup()
 fw.offset = 0
 pan_servo.offset = 10
 
-fw.turn(0)
+fw.turn(-90)
 pan_servo.write(45)
 
