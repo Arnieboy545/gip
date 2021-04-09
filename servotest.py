@@ -8,6 +8,7 @@ import numpy as np
 import picar
 import os
 
+fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
 picar.setup()
 
