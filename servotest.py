@@ -10,11 +10,13 @@ import os
 
 fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
+input = 0
 picar.setup()
 
-fw.offset = 20
-pan_servo.offset = 20
-
-fw.turn(70)
-pan_servo.write(75)
+fw.offset = 0
+pan_servo.offset = 0
+while input < 190:
+    num1 = int(input())
+    fw.turn(num1)
+    pan_servo.write(0)
 
