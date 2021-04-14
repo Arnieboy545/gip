@@ -36,7 +36,7 @@ class MyController(Controller):
             self.bw.forward()
     def on_L3_left(self, value):
         print("value:" + str(value))
-        angle = int(((110/32767 * value)+70))
+        angle = int((75-(-25/32767) * value))
         print("angle :" + str(angle))
         self.fw.turn(angle)
 
