@@ -35,6 +35,7 @@ class MyController(Controller):
             self.bw.speed = speed
             self.bw.forward()
     def on_L3_left(self, value):
+        print("value:" + str(value))
         angle = int(((110/32767 * value)+70))
         print("angle :" + str(angle))
         self.fw.turn(angle)
