@@ -8,6 +8,8 @@ import picar
 class MyController(Controller):
     picar.setup()
     bw = back_wheels.Back_Wheels()
+    fw = front_wheels.Front_Wheels()
+    pan_servo = Servo.Servo(1)
     bw.speed = 0
     motor_speed = 60
 
@@ -32,7 +34,13 @@ class MyController(Controller):
             print("backward:" + str(speed))
             self.bw.speed = speed
             self.bw.forward()
-    
+    def on_L3_left(self, value):
+        angle = int(((-110/32767 * value)+70))
+        print("angle :" + str(angle))
+        self.fw.turn(angle)
+
+
+
 
 controller = MyController(interface="/dev/input/js0", connecting_using_ds4drv=False)
 # you can start listening before controller is paired, as long as you pair it within the timeout window
