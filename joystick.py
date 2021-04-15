@@ -39,10 +39,10 @@ class MyController(Controller):
         angleL = int((75-(-25/32767) * value))
         print("angle1:" + str(angleL))
         self.fw.turn(angleL)
-    def on_L3_Right(self, value):
+    def on_L3_right(self, value):
         print("value2:" + str(value))
         angleR = int(((60/32767) * value + 75))
-        print("angle2:" + str(angleR))
+        print("angle2: " + str(angleR))
         self.fw.turn(angleR)
 
 
