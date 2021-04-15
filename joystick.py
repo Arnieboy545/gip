@@ -43,6 +43,7 @@ class MyController(Controller):
         print("value2:" + str(value))
         angleR = int(((60/32767) * value + 75))
         print("angle2:" + str(angleR))
+        self.fw.turn(angleR)
 
 
 
