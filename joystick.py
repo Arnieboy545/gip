@@ -18,11 +18,11 @@ class MyController(Controller):
         Controller.__init__(self, **kwargs)
 
     def on_x_press(self):
-       print("Hello world")
+        print("Hello world")
 
     def on_x_release(self):
-       print("Goodbye world")
-       self.bw.speed = 0
+        print("Goodbye world")
+        self.bw.speed = 0
 
     def on_L3_up(self, value):
         speed = int((value/400)*-1)
@@ -30,15 +30,19 @@ class MyController(Controller):
         self.bw.speed = speed
         self.bw.backward()
     def on_L3_down(self, value):
-            speed = int(value/400)
-            print("backward:" + str(speed))
-            self.bw.speed = speed
-            self.bw.forward()
+        speed = int(value/400)
+        print("backward:" + str(speed))
+        self.bw.speed = speed
+        self.bw.forward()
     def on_L3_left(self, value):
-        print("value:" + str(value))
-        angle = int((75-(-25/32767) * value))
-        print("angle :" + str(angle))
-        self.fw.turn(angle)
+        print("value1:" + str(value))
+        angleL = int((75-(-25/32767) * value))
+        print("angle1:" + str(angleL))
+        self.fw.turn(angleL)
+    def on_L3_Right(self, value):
+        print("value2:" + str(value))
+        angleR = int(((60/32767) * value + 75))
+        print("angle2:" + str(angleR))
 
 
 
