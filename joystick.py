@@ -1,7 +1,10 @@
 from pyPS4Controller.controller import Controller
 from picar import front_wheels, back_wheels
 from picar.SunFounder_PCA9685 import Servo
+from threading import Timer
 import picar
+import cv2
+import time
 
 
 
@@ -12,18 +15,15 @@ class MyController(Controller):
     pan_servo = Servo.Servo(1)
     bw.speed = 0
     motor_speed = 60
-
+    cap = cv2.VideoCapture(0)
 
     def __init__(self, **kwargs):
         Controller.__init__(self, **kwargs)
 
     def on_x_press(self):
-        print("Hello world")
-
-    def on_x_release(self):
-        print("Goodbye world")
-        self.bw.speed = 0
-
+        _,img = self.cap.read()
+        cv2.imwrite('Documents\\'+ str(time.time())+ '.png',img)
+        print("picture taken")
     def on_L3_up(self, value):
         speed = int((value/400)*-1)
         print("forward:" + str(speed))
@@ -44,6 +44,8 @@ class MyController(Controller):
         angleR = int(((60/32767) * value + 75))
         print("angle2: " + str(angleR))
         self.fw.turn(angleR)
+
+
 
 
 
